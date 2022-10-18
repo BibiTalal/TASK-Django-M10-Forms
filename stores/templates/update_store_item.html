@@ -6,13 +6,16 @@
     <body>
 
         <h1>Update Store Item:</h1>
-        {{%for item in store_item%}}
-        <form action="{% url 'update-store-item' item_id=item.id %}" method="POST">
-            {%csrf_token%}
+        
+       {% for item in store_item %}
+       <form action="{% url 'update-store-item' item_id=store_item.id %}" method="POST">
+            {% csrf_token %}
             {{form}}
-            <button type="submit">Apply Changes</button>
+          <button type="submit">Apply Changes</button>
         </form>
-        {{%endfor%}}
+         
+         {% endfor %}
+        
        
     </body>
 </html>

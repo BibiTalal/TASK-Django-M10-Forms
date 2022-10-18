@@ -23,6 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("items/", store_views.get_store_items, name="store-item-list"),
     path("items/add/", create_store_item, name="create-store-item"),
-    path("items/<int:item_id>/", update_store_item, name="update-store-item"),
+    path("items/<int:item_id>/",
+         update_store_item, name="update-store-item"),
     path("delete/<int:item_id>/", delete_store_item, name="delete-store-item"),
 ]

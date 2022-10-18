@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+    <body>
+
+        <h1>Add Item:</h1>
+        <form action="{% url 'create-store-item' %}" method="POST">
+            {%csrf_token%}
+            {{form}}
+            <button type="submit">Add</button>
+        </form>
+    </body>
+</html>

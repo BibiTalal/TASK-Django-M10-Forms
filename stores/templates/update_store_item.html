@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
+      <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"/>  -->
     </head>
     <body>
 
         <h1>Update Store Item:</h1>
         
-       {% for item in store_item %}
+        {% load crispy_forms_tags %}
        <form action="{% url 'update-store-item' item_id=store_item.id %}" method="POST">
             {% csrf_token %}
-            {{form}}
+            <!-- {{form}} -->
+            <div class="row">
+              <div class="col-6">
+                {{ form.name|as_crispy_field }}
+              </div>
+              <div class="col-6">
+                {{ form.description|as_crispy_field }}
+              </div>
+              <div class="col-6">
+                  {{ form.kind|as_crispy_field }}
+                </div>
+                <div class="col-6">
+                  {{ form.price|as_crispy_field }}
+                </div>
+                <div class="col-6">
+                  {{ form.image }}
+                </div>
+            </div> 
           <button type="submit">Apply Changes</button>
         </form>
          
-         {% endfor %}
+         
         
        
     </body>

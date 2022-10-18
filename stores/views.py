@@ -54,5 +54,5 @@ def delete_store_item(request, item_id):
         store_item = None
     #     raise Http404("Item does not exist")
     #     return redirect("store-item-list")
-    return render(request, "delete_store_item.html", {"store_item": store_item})
+    return redirect("store-item-list")
     # return render(request, "delete_store_item.html")

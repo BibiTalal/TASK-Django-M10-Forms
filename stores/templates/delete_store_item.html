@@ -8,7 +8,7 @@
 <body>
     <h1>Delete Item:</h1>
     <div>
-      {% for item in store_item %}
+      
         <a herf="{% url 'delete-store-item' item_id=store_item.id %}"> 
 
           <h4> Delete </h4>
@@ -16,6 +16,6 @@
   
         </a>
       </div>
-       {% endfor %}
+       
 </body>
 </html>

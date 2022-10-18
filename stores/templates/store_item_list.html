@@ -16,10 +16,18 @@
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand">WAM Store</a>
-        <button class="d-flex btn btn-outline-light" type="submit">
+        <form
+          action="{% url 'create-store-item' %}">
+          <button class="d-flex btn btn-outline-light" type="submit" >
+       
           Add Item
         </button>
+
+        </form>
+        
+       
       </div>
+      
     </nav>
     <div class="container  overflow-hidden">
       <h1 class="text-center">Store Items</h1>
@@ -36,6 +44,27 @@
               <h5 class="card-title">{{ item.name }}</h3>
                 <h6 class="card-subtitle mb-2 text-muted">Kind: {{ item.kind }}</h6>
                 <p class="card-text">{{ item.description }}</p> 
+                <p class="card-text">{{ item.price }}</p> 
+                <!-- <p class="card-text"> id:{{item.id}}</p> </p> -->
+                <form
+                  action="{% url 'update-store-item' item_id=item.id%}">
+                  <button class="card-text" type="submit" >
+             
+                 edit
+              </button>
+                </form>
+                <form
+                  action="{% url 'delete-store-item' item_id=item.id%}">
+                  <button class="card-text" type="submit" >
+             
+                Delete Item
+              </button>
+                </form>
+      
+                
+
+      
+              
               </div>
             </div>
         </div>
@@ -44,6 +73,10 @@
         {% endif %}
       </div>
       <div>
+        <div>
+      
+         
+        </div>
        
       </div>
  
